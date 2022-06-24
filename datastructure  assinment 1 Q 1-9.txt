@@ -1,0 +1,446 @@
+find armtrong or not
+====================
+package capg.java;
+import java.util.Scanner;  
+import java.lang.Math;  
+public class ArmstrongNumber  
+{  
+static boolean isArmstrong(int n)   
+{   
+int temp, digits=0, last=0, sum=0;     
+temp=n;     
+while(temp>0)    
+{   
+temp = temp/10;   
+digits++;   
+}   
+temp = n;   
+while(temp>0)   
+{        
+last = temp % 10;    
+sum +=  (Math.pow(last, digits));     
+temp = temp/10;   
+}   
+if(n==sum)    
+return true;        
+else return false;   
+}    
+public static void  main(String args[])     
+{     
+int num;   
+Scanner sc= new Scanner(System.in);  
+System.out.print("Enter the number: ");   
+num=sc.nextInt();  
+if(isArmstrong(num))  
+{  
+System.out.print("Armstrong ");  
+}  
+else   
+{  
+System.out.print("Not Armstrong ");  
+}  
+}   
+}  
+
+o/p
+----
+Enter the number: 153
+Armstrong 
+============================================================
+range of amstrongnumber
+------------------------
+package capg.java;
+import java.util.Scanner;  
+import java.lang.Math;  
+public class ArmstrongNumber  
+{   
+static boolean isArmstrong(int n)   
+{   
+int temp, digits=0, last=0, sum=0;   
+temp=n;   
+while(temp>0)    
+{   
+temp = temp/10;   
+digits++;   
+}   
+temp = n;   
+while(temp>0)   
+{   
+last = temp % 10;   
+sum +=  (Math.pow(last, digits));   
+temp = temp/10;   
+}  
+if(n==sum)   
+return true;       
+else return false;   
+}   
+public static void main(String args[])     
+{     
+int num;   
+Scanner sc= new Scanner(System.in);  
+System.out.print("Enter the limit: ");   
+num=sc.nextInt();  
+System.out.println("Armstrong Number up to "+ num + " are: ");  
+for(int i=0; i<=num; i++)  
+if(isArmstrong(i))  
+System.out.print(i+ ", ");  
+}   
+} 
+o/p
+-----
+Enter the limit: 999
+Armstrong Number up to 999 are: 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407,  
+================================================================
+simple and compound intrest
+==========================
+package capg.java;
+import java.util.*;
+public class SimpleAndCompoundIntrest{
+public static void main(String []args){
+   double p, r, t, s_interest, c_interest;
+   Scanner scanner = new Scanner (System. in);
+   System.out.println("Enter the value of Principal = ");
+   p = scanner.nextDouble();
+   System. out. println("Enter the Annual Rate of Interest = ");
+   r = scanner.nextDouble();
+   System. out. println("Enter the Time (years) = ");
+   t = scanner.nextDouble();
+   s_interest = (p * r * t)/100;
+   c_interest = p * Math.pow(1.0+r/100.0,t) - p;
+   System.out.println("Simple Interest: "+s_interest);
+   System.out. println("Compound Interest: "+c_interest);
+}
+}
+o/p
+-----
+Enter the value of Principal = 
+10000
+Enter the Annual Rate of Interest = 
+2
+Enter the Time (years) = 
+5
+Simple Interest: 1000.0
+Compound Interest: 1040.8080320000008
+==================================================================
+Student subjects
+-----------------
+package capg.java;
+
+import java.util.Scanner;
+
+public class Student {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter the three subject marks");
+        System.out.println("First subject marks");
+        int marksOfSubject1=scanner.nextInt();
+
+        System.out.println("Second subject marks");
+        int marksOfSubject2=scanner.nextInt();
+
+        System.out.println("Third subject marks");
+        int marksOfSubject3=scanner.nextInt();
+
+        checkResult(marksOfSubject1,marksOfSubject2,marksOfSubject3);
+
+    }
+
+    public static void checkResult(int marksOfSubject1,int marksOfSubject2,int marksOfSubject3){
+        int count=0;
+
+        if(marksOfSubject1>60){
+            count++;
+        }
+
+        if(marksOfSubject2>60){
+            count++;
+        }
+
+        if(marksOfSubject3>60){
+            count++;
+        }
+
+        if(count==3){
+            System.out.println("Result : Passed");
+        }
+
+        if(count==2){
+            System.out.println("Result : Promoted");
+        }
+
+        if(count<=1){
+            System.out.println("Result : Failed");
+        }
+    }
+}
+
+o/p
+------
+Enter the three subject marks
+First subject marks
+78
+Second subject marks
+68
+Third subject marks
+45
+Result : Promoted
+=======================================
+tax
+------
+package capg.java;
+
+
+import java.util.Scanner;
+
+public class Range {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the ctc amount to calculate tax");
+        double ctc = s.nextInt();
+
+        calculateTaxAmount(ctc);
+
+    }
+    public static void calculateTaxAmount(double ctc){
+        if(ctc<=180000){
+            System.out.println("Taxed Amount for ctc "+ctc+ ": "+0);
+        }
+        if(ctc>181000&&ctc<300001){
+            System.out.println("Taxed Amount for ctc  "+ctc+ ": "+ctc*0.1);
+        }
+        if(ctc>300000&&ctc<500001){
+            System.out.println("Taxed Amount for ctc "+ctc+" : "+ctc*0.2);
+        }
+        if(ctc>500000&&ctc<1000001){
+            System.out.println("Taxed Amount for ctc "+ctc+" : "+ctc*0.3);
+        }
+    }
+
+}
+
+o/p
+------
+Enter the ctc amount to calculate tax
+300000
+Taxed Amount for ctc  300000.0: 30000.0
+===========================================
+password mismatch
+--------------------
+package capg.java;
+
+
+import java.util.Scanner;
+
+public class LoginPage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String sp=" ";
+        System.out.println("Enter the Username");
+        String uname = sc.nextLine();
+        if((uname.contains(sp)) || uname.length()<4){
+            System.out.println("Invalid Username");
+            return;
+        }
+
+        System.out.println("Enter the Password");
+        String upass = sc.nextLine();
+        if((upass.contains(sp)) || upass.length()<8){
+            System.out.println("Invalid Password");
+            return;
+        }
+
+        System.out.println(uname+" you are Registered Successfully");
+
+        System.out.println("Enter the Username");
+        String lname = sc.nextLine();
+        System.out.println("Enter the Password");
+        String lpass = sc.nextLine();
+
+        if(uname.equals(lname) && upass.equals(lpass)){
+            System.out.println("Welcome "+lname+" you have Logged-in Successfully");
+        }
+        else{
+            System.out.println("Username or password Mismatch");
+        }
+    }
+}
+o/p
+-----
+Enter the Username
+prasad
+Enter the Password
+prasad
+Invalid Password
+=========================
+sorted array
+------------
+package capg.java;
+public class BubbleSort {
+
+    void bubbleSort(int arr[]) 
+
+    { 
+
+        int n = arr.length; 
+
+        for (int i = 0; i < n - 1; i++) 
+
+            for (int j = 0; j < n - i - 1; j++) 
+
+                if (arr[j] > arr[j + 1]) { 
+
+                    // swap arr[j+1] and arr[j] 
+
+                    int temp = arr[j]; 
+
+                    arr[j] = arr[j + 1]; 
+
+                    arr[j + 1] = temp; 
+
+                } 
+
+    } 
+
+  
+
+    void printArray(int arr[]) 
+
+    { 
+
+        int n = arr.length; 
+
+        for (int i = 0; i < n; ++i) 
+
+            System.out.print(arr[i] + " "); 
+
+        System.out.println(); 
+
+    } 
+
+  
+
+    public static void main(String args[]) 
+
+    { 
+
+        BubbleSort ob = new BubbleSort(); 
+
+        int arr[] = { 5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47}; 
+
+        ob.bubbleSort(arr); 
+
+        System.out.println("Sorted array"); 
+
+        ob.printArray(arr); 
+
+    } 
+}
+o/p
+-----
+Sorted array
+1 5 6 7 12 14 19 23 26 35 37 47 52 78 86 
+============================================
+not found
+---------------
+package capg.java;
+
+public class Array {
+	  public static void main(String[] args) {
+
+	    int[] num = {5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47};
+	    int toFind = 35;
+	    boolean found = false;
+
+	    for (int n : num) {
+	      if (n == toFind) {
+	        found = true;
+	        break;
+	      }
+	    }
+	    
+	    if(found)
+	      System.out.println(toFind + " is found.");
+	    else
+	      System.out.println(toFind + " is not found.");
+	  }
+	}
+
+o/p
+------
+35 is found.
+===========================
+Student Score
+------------
+package capg.java;
+
+import java.util.Scanner;
+
+public class StudentABC {
+    public static void main(String[] args) {
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the marks for Student 1 ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int x = a + b + c;
+
+        System.out.println("Enter the marks for Student 2 ");
+        int d = sc.nextInt();
+        int e = sc.nextInt();
+        int f = sc.nextInt();
+        int y = d + e + f;
+
+        System.out.println("Enter the marks for Student 3");
+        int g = sc.nextInt();
+        int h = sc.nextInt();
+        int i = sc.nextInt();
+        int z = g + h + i;
+
+        int total_marks = a + b + c + d + e + f + g + h + i;
+        System.out.println("Total marks of all the students in all subjects : " + total_marks);
+
+        float avg_marks = (x + y + z) / 3;
+        System.out.println("Average marks of all the students in all subjects : " + avg_marks);
+
+        float sub_a = a + d + g;
+        System.out.println("Total marks scored by students in subject A : " + sub_a);
+        System.out.println(" Average marks scored by students in subject A : " + (sub_a) / 3);
+
+        int sub_b = b + e + h;
+        System.out.println("Total marks scored by students in subject B : " + sub_b);
+        System.out.println(" Average marks scored by students in subject B : " + (sub_b) / 3);
+
+        int sub_c = c + f + i;
+        System.out.println("Total marks scored by students in subject C : " + sub_c);
+        System.out.println(" Average marks scored by students in subject C : " + (sub_c) / 3);
+    }
+}
+
+O/p
+-------
+Enter the marks for Student 1 
+67
+67
+87
+Enter the marks for Student 2 
+89
+67
+90
+Enter the marks for Student 3
+78
+56
+89
+Total marks of all the students in all subjects : 690
+Average marks of all the students in all subjects : 230.0
+Total marks scored by students in subject A : 234.0
+ Average marks scored by students in subject A : 78.0
+Total marks scored by students in subject B : 190
+ Average marks scored by students in subject B : 63
+Total marks scored by students in subject C : 266
+ Average marks scored by students in subject C : 88
+
+
